@@ -1,0 +1,50 @@
+
+<p>newone works!</p>
+<h1>Output of Newone</h1>
+<h2> I want a border wall</h2>
+
+<button mat-raised-button color="warn">FANCY!</button>
+<button mat-icon-button color="primary" aria-label="Example icon button with a home icon">
+    <mat-icon>home</mat-icon>
+</button>
+
+<p *ngIf="val && val1; then updated; else val2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, sapiente ex voluptates, pariatur praesentium ullam temporibus laudantium ipsam, aut a nulla ad dolores reprehenderit dicta optio provident hic consectetur magnam!</p>
+
+<ul>
+    <li *ngFor = "let key of obj; index as i; first as f; last as el; even as e; odd as o;">
+        <div style="background-color: aqua;" *ngIf="e">
+            {{i}}:: key: {{key.rollnum}}, name: {{key.name}}, date: {{key.date}}
+        </div>
+        <div style="background-color: burlywood;" *ngIf="o">
+            {{i}}:: key: {{key.rollnum}}, name: {{key.name}}, date: {{key.date}}
+        </div>
+    </li>
+</ul>
+
+<ul>
+    <li *ngFor = "let key of obj; index as i; first as f; last as el; even as e; odd as o;">
+        <h2 *ngIf="f">
+            Massive Hello at the Start
+        </h2>
+        <p style="background-color: aqua;" *ngIf="e">
+            {{i}}:: key: {{key.rollnum}}, name: {{key.name}}, date: {{key.date}}
+        </p>
+        <p style="background-color: burlywood;" *ngIf="o">
+            {{i}}:: key: {{key.rollnum}}, name: {{key.name}}, date: {{key.date}}
+        </p>
+        <h2 *ngIf="el">
+            Massive Goodbye at the End
+        </h2>
+    </li>
+</ul>
+
+
+<ng-template #val2>
+    <h2>replaced my p</h2>
+</ng-template>
+
+<ng-template #updated>
+    This is an update. Please message Update.
+</ng-template>
+
+
