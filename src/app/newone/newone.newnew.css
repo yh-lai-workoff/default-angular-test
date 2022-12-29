@@ -2,6 +2,23 @@ h2 {
     border: black solid 3px
 }
 
-[primary] {
-    color:red;
+.a {
+    font-size: 20px;
+    background-color: black;
 }
+
+.b {
+    font-size: 30px;
+    background-color: blue;
+}
+
+.c {
+    font-size: 10px;
+    background-color: blueviolet;
+}
+
+.d {
+    border:black solid 5px;
+}
+
+

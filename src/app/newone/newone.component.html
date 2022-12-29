@@ -39,6 +39,100 @@
 </ul>
 
 
+<div [ngSwitch]="game">
+    <div *ngSwitchCase = "'cricket'">
+        Playing Cricket
+    </div>
+    <div *ngSwitchCase = "'soccer'">
+        Player Soccer
+    </div>
+    <div *ngSwitchCase = "'basketball'">
+        Playing Basketball
+    </div>
+    <div *ngSwitchCase = "'tennis'">
+        Playing Tennis
+    </div>
+    <div *ngSwitchCase = "'dance'">
+        Playing Dances
+    </div>
+    <div *ngSwitchCase = "'fooooootball'">
+        Playing American Football
+    </div>
+    <div *ngSwitchDefault>
+        What are games?
+    </div>
+</div>
+
+<span [ngStyle]="{'color':color, 'background-color':backColor, 'display':'block', 'padding':padding, 'margin':margin, 'border':border}">
+    Change my Colour Dynamically
+</span>
+
+<p [ngStyle]="{'color': color=='red' ? 'red' : 'orange'}">
+    Change my Colour with Ternary
+</p>
+
+<p [ngClass]="ternaryClass == 2 ? classValue : classValue2">
+    Change my style with ngClass
+</p>
+
+<p [ngClass]="{b:true,d: true, a:false}">
+    Change my style with object???!
+</p>
+
+<p [ngClass] ="callMe()">
+    Change style by calling a FUNCTION?!
+</p>
+
+<p>
+    {{classValue}}
+</p>
+
+<h1>Table</h1>
+
+<table>
+    <tr [title] = "'heading row'">
+        <th>
+            index
+        </th>
+        <th>
+            rollnum
+        </th>
+        <th [attr.colspan]="num">
+            Name
+        </th>
+        
+    </tr>
+    <tr *ngFor = "let key of obj; index as i; first as f; last as el; even as e; odd as o;">
+        <td>
+            {{i}}
+        </td>
+        <td>
+            {{key.rollnum}}
+        </td>
+        <td>
+            {{key.name}}
+        </td>
+        <td>
+            {{key.date}}
+        </td>
+        
+    </tr>
+</table>
+
+<h3 [innerHTML]="border">Change this innerhtml</h3>
+
+<img [src]="imgsrc" [alt]="alttext">
+
+<h2 [style.color]="color">This is a style binding</h2>
+
+<p [style]="multiStyleObj">This is a multi-style binding</p>
+
+<p [attr.title]="'title'"> This is attribute binding</p>
+
+<button (click)="clickMe()">Click For event bindings</button>
+<button (mouseover)="clickMe()">Mouseover For event bindings</button>
+<input type="text" (keyup)="clickMe2(2,3,4)">
+
 <ng-template #val2>
     <h2>replaced my p</h2>
 </ng-template>
