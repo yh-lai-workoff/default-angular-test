@@ -1,6 +1,21 @@
-<router-outlet></router-outlet>
 <h1>Works like a charm</h1>
 <h2>A Smaller Charm</h2>
-<app-newone></app-newone>
-<app-profiletest></app-profiletest>
+<a href="(routerone:newoneRoute//routertwo:newtwoRoute)">Fancy Fancy</a>
+<a href="./(routerone:newoneRoute//routerthree:newthreeRoute)">Not Fancy Fancy</a>
+<a routerLink="newThreeRoute">Not Fancy Fancy</a>
+<br>
+
+<router-outlet></router-outlet>
+
+<router-outlet name="routertwo">
+
+</router-outlet>
+
+<router-outlet name="routerone">
+
+</router-outlet>
+<router-outlet name="routerthree">
+
+</router-outlet>
+
 <link rel="stylesheet" href="app.component.css">

@@ -129,9 +129,41 @@
 
 <p [attr.title]="'title'"> This is attribute binding</p>
 
-<button (click)="clickMe()">Click For event bindings</button>
+<!-- <button (click)="clickMe()">Click For event bindings</button>
 <button (mouseover)="clickMe()">Mouseover For event bindings</button>
-<input type="text" (keyup)="clickMe2(2,3,4)">
+<input type="text" (keyup)="clickMe2(2,3,4)"> -->
+
+<input type="text" [(ngModel)]="game" name="" id="">
+<span>{{game}}</span>
+<br><br>
+<input type="number" name="" id="" [(ngModel)]="num">
+<p *ngIf="num>10" style="color:red;">This Num = {{num}} is >10</p>
+
+<br><br>
+<h3>Here lay the pipes</h3>
+<p>{{game | uppercase}}</p>
+<p>{{upperString | lowercase}}</p>
+<p> Normal Date: {{aDate | date}}</p>
+<p> "Long" Parameter: {{aDate | date : "long"}}</p>
+<p> Chained Lowercase "Long" Pipe: {{aDate | date : "long" | lowercase}}</p>
+<p> "Medium" Parameter: {{aDate | date : "medium"}}</p>
+<p> "Short" Parameter: {{aDate | date : "short"}}</p>
+<p> "GGGG" Parameter: {{aDate | date : "GGGG"}}</p>
+<p> "dd/MMM/YYYY" Parameter: {{aDate | date : "dd/MMM/YYYY"}}</p>
+<p>{{num | currency}}</p>
+<p>{{num | percent}}</p>
+<p>{{bigPercent | percent : "2.6"}}</p>
+<p>{{bigPercent | percent : "10.1-2"}}</p>
+<p>
+    Indian Currency: {{num | currency : "INR"}} <br>
+    Euro : {{num | currency: "EUR"}} <br>
+    Canadian? : {{num | currency : "CAD"}}
+</p>
+<p>Without Pipe: {{obj2}}</p>
+<p>With JSON Pipe: {{obj2 | json}}</p>
+<p>With JSON Pipe: {{obj2 | json | uppercase}}</p>
+
+
 
 <ng-template #val2>
     <h2>replaced my p</h2>
@@ -140,5 +172,7 @@
 <ng-template #updated>
     This is an update. Please message Update.
 </ng-template>
+
+<br><br>End of File for newone.component.html<br><br>
 
 

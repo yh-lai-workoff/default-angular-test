@@ -9,6 +9,10 @@ export class NewoneComponent {
   val : boolean = false;
   val1 : boolean = true;
 
+  obj2 ={"rollnum":10,
+  "name":"fancy",
+  "date":23}
+
   obj = [
     
     {"rollnum":10,
@@ -27,7 +31,11 @@ export class NewoneComponent {
     }
   ]
 
-  game = "efefe"
+  printObj(){
+
+  }
+
+  game = "cricket"
 
   color = 'blue'
   backColor = 'black'
@@ -60,6 +68,12 @@ export class NewoneComponent {
   clickMe2(a:Number, b:Number, c:Number){
     window.alert(a)
   }
+
+  upperString = "LOWER CASE ME"
+
+  aDate = Date.now();
+
+  bigPercent = 923.232
 
 }
 

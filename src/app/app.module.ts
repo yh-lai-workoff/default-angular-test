@@ -9,13 +9,19 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material/button';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatIconModule} from '@angular/material/icon';
+import { FormsModule } from '@angular/forms';
+import { NewtwoComponent } from './newtwo/newtwo.component';
+import { NewthreeComponent } from './newthree/newthree.component';
+import { HashLocationStrategy, LocationStrategy, PathLocationStrategy } from '@angular/common';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     NewoneComponent,
-    ProfiletestComponent
+    ProfiletestComponent,
+    NewtwoComponent,
+    NewthreeComponent
   ],
   imports: [
     BrowserModule,
@@ -23,9 +29,12 @@ import {MatIconModule} from '@angular/material/icon';
     BrowserAnimationsModule,
     MatButtonModule,
     MatButtonToggleModule,
-    MatIconModule
+    MatIconModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [
+    {provide: LocationStrategy, useClass:HashLocationStrategy}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
