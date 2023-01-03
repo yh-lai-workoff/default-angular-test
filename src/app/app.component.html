@@ -1,11 +1,15 @@
 <h1>Works like a charm</h1>
 <h2>A Smaller Charm</h2>
 <a href="(routerone:newoneRoute//routertwo:newtwoRoute)">Fancy Fancy</a>
-<a href="./(routerone:newoneRoute//routerthree:newthreeRoute)">Not Fancy Fancy</a>
-<a routerLink="newThreeRoute">Not Fancy Fancy</a>
+<a href="./(routerone:newoneRoute//routerthree:newthreeRoute)">Not Fancy Fancy</a><br>
+<a routerLink="newone/newtwo">Nested Anchor</a><br>
+<a routerLink="newone">Normal Anchor</a><br>
+<a href="newthree">NewThree</a><br>
+<a routerLink="newthree/44/shoes">NewThreeThree</a><br>
 <br>
 
 <router-outlet></router-outlet>
+<!-- <router-outlet></router-outlet>
 
 <router-outlet name="routertwo">
 
@@ -16,6 +20,8 @@
 </router-outlet>
 <router-outlet name="routerthree">
 
-</router-outlet>
+</router-outlet> -->
+
+
 
 <link rel="stylesheet" href="app.component.css">

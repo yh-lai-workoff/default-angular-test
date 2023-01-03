@@ -30,7 +30,10 @@ const routes: Routes = [
     path:"newoner",
     redirectTo: "newoneRoute"
   },
-  
+  {
+    path:"newone",
+    component:NewoneComponent
+  },
   {
     // Redeclare
     path:"newone",
@@ -44,11 +47,8 @@ const routes: Routes = [
         component: NewthreeComponent
       }
     ]
-  },
-  {
-    path:"newone",
-    component:NewoneComponent
   }
+  
   
 ];
 

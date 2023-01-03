@@ -1,1 +1,38 @@
 <p>newthree works!</p>
+<p>Val 1 is: {{val}}</p>
+<p>Val 2 is: {{val2}}</p>
+
+
+<table>
+    <tr [title] = "'heading row'">
+        <th>
+            index
+        </th>
+        <th>
+            rollnum
+        </th>
+        <th>
+            Name
+        </th>
+        
+    </tr>
+    <tr *ngFor = "let key of obj; index as i; first as f; last as el; even as e; odd as o;">
+        <td>
+            {{i}}
+        </td>
+        <td>
+            {{key.rollnum}}
+        </td>
+        <td>
+            {{key.name}}
+        </td>
+        <td>
+            {{key.date}}
+        </td>
+        <td>
+            <a [routerLink]="['/edit',i]">Edit</a> ||
+            <a [routerLink]="['delete',i]">Delete</a>
+        </td>
+        
+    </tr>
+</table>
