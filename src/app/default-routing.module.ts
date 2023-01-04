@@ -6,26 +6,45 @@ import { Routes, RouterModule } from '@angular/router';
 import { NewoneComponent } from './newone/newone.component';
 import { NewtwoComponent } from './newtwo/newtwo.component';
 import { NewthreeComponent } from './newthree/newthree.component';
+import { NewfourComponent } from './newfour/newfour.component';
+import { ErrorcomponentComponent } from './errorcomponent/errorcomponent.component';
+import { RouteguardGuard } from './routeguard.guard';
+import { DoubleguardGuard } from './doubleguard.guard';
+import { ChildguardGuard } from './childguard.guard';
+import { LoadguardGuard } from './loadguard.guard';
+import { DeactiveguardGuard } from './deactiveguard.guard';
 
 // Step 2
 const routes : Routes =[
   {
     path:"newone",
-    component:NewoneComponent
+    component:NewoneComponent,
+    canActivate: [RouteguardGuard, DoubleguardGuard],  // Route Guard added
+    
   },
   {
     // Redeclare for child paths
     path:"newone",
     children:[
       {
-        path:"newtwo",
-        component: NewtwoComponent
+        // Second 
+        path:"",
+        canActivateChild:[ChildguardGuard],
+        children:[
+          {
+            path:"newtwo",
+            component:NewtwoComponent,
+            canDeactivate: [DeactiveguardGuard]
+          }
+        ]
       },
       {
         path:"newthree",
         component: NewthreeComponent
       }
-    ]
+    ],
+    canActivate: [RouteguardGuard, DoubleguardGuard],
+    canActivateChild: []
   },
   // parameterized routing
   {
@@ -41,6 +60,19 @@ const routes : Routes =[
     path: "",
     redirectTo: "newtwo",
     pathMatch: "full"
+  },
+  {
+    path:"newfour",
+    component: NewfourComponent
+  },
+  { path: 'lazy', 
+    loadChildren: () => import('./lazymod/lazymod.module').then(m => m.LazymodModule),
+    canActivate:[RouteguardGuard],
+    canLoad:[LoadguardGuard] },
+  // Wildcard Rerouting
+  {
+    path:"**",
+    component: ErrorcomponentComponent
   }
 
 ]

@@ -11,7 +11,6 @@ export class NewthreeComponent implements OnInit {
   public val2 : any;
   constructor(private activatedRoute : ActivatedRoute){
     // Call Subscribe method to access parameters, steal ith and print it
-    console.log(Math.PI);
     this.activatedRoute.params.subscribe(
       p => {
         console.log(p)

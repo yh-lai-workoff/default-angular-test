@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./newtwo.component.css']
 })
 export class NewtwoComponent {
-
+  passToGuard = true;
+  
 }

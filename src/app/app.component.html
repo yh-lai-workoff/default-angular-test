@@ -1,11 +1,12 @@
 <h1>Works like a charm</h1>
 <h2>A Smaller Charm</h2>
-<a href="(routerone:newoneRoute//routertwo:newtwoRoute)">Fancy Fancy</a>
-<a href="./(routerone:newoneRoute//routerthree:newthreeRoute)">Not Fancy Fancy</a><br>
-<a routerLink="newone/newtwo">Nested Anchor</a><br>
-<a routerLink="newone">Normal Anchor</a><br>
+<a href="(routerone:newoneRoute//routertwo:newtwoRoute)">Named Router Outlet 1</a>
+<a href="./(routerone:newoneRoute//routerthree:newthreeRoute)">Named Router Outlet 2</a><br>
+<a [routerLink]="['newone','newtwo']">Nested Anchor: One - Two</a><br>
+<a routerLink="newone">Normal Anchor: One</a><br>
 <a href="newthree">NewThree</a><br>
-<a routerLink="newthree/44/shoes">NewThreeThree</a><br>
+<a routerLink="newthree/44/shoes">NewThree - TwoParams</a><br>
+<a routerLink="newfour">NewFour - NoQuery</a>
 <br>
 
 <router-outlet></router-outlet>

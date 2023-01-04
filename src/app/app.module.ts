@@ -14,6 +14,8 @@ import { NewtwoComponent } from './newtwo/newtwo.component';
 import { NewthreeComponent } from './newthree/newthree.component';
 import { HashLocationStrategy, LocationStrategy, PathLocationStrategy } from '@angular/common';
 import { DefaultRoutingModule } from './default-routing.module';
+import { NewfourComponent } from './newfour/newfour.component';
+import { ErrorcomponentComponent } from './errorcomponent/errorcomponent.component';
 
 
 @NgModule({
@@ -22,7 +24,9 @@ import { DefaultRoutingModule } from './default-routing.module';
     NewoneComponent,
     ProfiletestComponent,
     NewtwoComponent,
-    NewthreeComponent
+    NewthreeComponent,
+    NewfourComponent,
+    ErrorcomponentComponent
   ],
   imports: [
     BrowserModule,
