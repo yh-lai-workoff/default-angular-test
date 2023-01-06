@@ -1,0 +1,21 @@
+<p>reactiveform works!</p>
+<h1>REACTIVE FORM</h1>
+<form [formGroup]="addReactF" (submit)="fun1()">
+    <div *ngIf="addReactF.get('fn')?.hasError('required')">This input cannot be empty!</div>
+    <div *ngIf="addReactF.get('fn')?.hasError('minlength')">This input cannot be less than 5 chars!</div>
+    <div *ngIf="addReactF.get('fn')?.hasError('minlength')||addReactF.get('fn')?.hasError('required')">This input is invalid!</div>
+    <input (keyup)="valChange()" type="text" name="" formControlName="fn" id=""><br>
+    <input type="text" name="" formControlName="ln" id=""><br>
+    <input type="submit" value="Submit"><br>
+    <input type="button" value="Click" (click)="fun2()" [disabled]="!addReactF.valid"><br>
+    <input type="button" value="Validate" (click)="fun3()"><br>
+    <button (click)="fun4()">Clicky clicky Reset</button>
+    <input type="reset" value="Reset">
+
+    <br><br>
+    <div formArrayName="users" *ngFor="let control of formArr.controls; index as i">
+        <input [formControlName]="i">
+    </div>
+    <br><br>
+    {{x|json}}
+</form>

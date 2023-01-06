@@ -22,7 +22,7 @@ export class NewthreeComponent implements OnInit {
   }
 
    ngOnInit(): void {
-       
+       console.log(this.activatedRoute.snapshot.data);
    }
 
    obj = [

@@ -13,9 +13,26 @@ import { DoubleguardGuard } from './doubleguard.guard';
 import { ChildguardGuard } from './childguard.guard';
 import { LoadguardGuard } from './loadguard.guard';
 import { DeactiveguardGuard } from './deactiveguard.guard';
+import { ResolveguardGuard } from './resolveguard.guard';
+import { TemplateformComponent } from './templateform/templateform.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveformComponent } from './reactiveform/reactiveform.component';
 
 // Step 2
 const routes : Routes =[
+  {
+    path:"form",
+    children:[
+      {
+        path:"static",
+        component: TemplateformComponent
+      },
+      {
+        path:"reactive",
+        component: ReactiveformComponent
+      }
+    ]
+  },
   {
     path:"newone",
     component:NewoneComponent,
@@ -40,7 +57,10 @@ const routes : Routes =[
       },
       {
         path:"newthree",
-        component: NewthreeComponent
+        component: NewthreeComponent,
+        resolve:{
+          status:ResolveguardGuard
+        }
       }
     ],
     canActivate: [RouteguardGuard, DoubleguardGuard],

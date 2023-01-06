@@ -9,13 +9,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material/button';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatIconModule} from '@angular/material/icon';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NewtwoComponent } from './newtwo/newtwo.component';
 import { NewthreeComponent } from './newthree/newthree.component';
 import { HashLocationStrategy, LocationStrategy, PathLocationStrategy } from '@angular/common';
 import { DefaultRoutingModule } from './default-routing.module';
 import { NewfourComponent } from './newfour/newfour.component';
 import { ErrorcomponentComponent } from './errorcomponent/errorcomponent.component';
+import { TemplateformComponent } from './templateform/templateform.component';
+import { ReactiveformComponent } from './reactiveform/reactiveform.component';
 
 
 @NgModule({
@@ -26,7 +28,10 @@ import { ErrorcomponentComponent } from './errorcomponent/errorcomponent.compone
     NewtwoComponent,
     NewthreeComponent,
     NewfourComponent,
-    ErrorcomponentComponent
+    ErrorcomponentComponent,
+    TemplateformComponent,
+    ReactiveformComponent
+    
   ],
   imports: [
     BrowserModule,
@@ -36,7 +41,8 @@ import { ErrorcomponentComponent } from './errorcomponent/errorcomponent.compone
     MatButtonToggleModule,
     MatIconModule,
     FormsModule,
-    DefaultRoutingModule
+    DefaultRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [
     {provide: LocationStrategy, useClass:HashLocationStrategy}
