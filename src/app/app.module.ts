@@ -18,6 +18,10 @@ import { NewfourComponent } from './newfour/newfour.component';
 import { ErrorcomponentComponent } from './errorcomponent/errorcomponent.component';
 import { TemplateformComponent } from './templateform/templateform.component';
 import { ReactiveformComponent } from './reactiveform/reactiveform.component';
+import { ReactiveForm2Component } from './reactive-form2/reactive-form2.component';
+import { HttpClientJsonpModule, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { PostFormComponent } from './post-form/post-form.component';
+import { CommonupdateInterceptor } from './commonupdate.interceptor';
 
 
 @NgModule({
@@ -30,7 +34,9 @@ import { ReactiveformComponent } from './reactiveform/reactiveform.component';
     NewfourComponent,
     ErrorcomponentComponent,
     TemplateformComponent,
-    ReactiveformComponent
+    ReactiveformComponent,
+    ReactiveForm2Component,
+    PostFormComponent
     
   ],
   imports: [
@@ -42,10 +48,17 @@ import { ReactiveformComponent } from './reactiveform/reactiveform.component';
     MatIconModule,
     FormsModule,
     DefaultRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
+    HttpClientJsonpModule
   ],
   providers: [
-    {provide: LocationStrategy, useClass:HashLocationStrategy}
+    {provide: LocationStrategy, useClass:HashLocationStrategy},
+    {
+      provide:HTTP_INTERCEPTORS,
+      useClass:CommonupdateInterceptor,
+      multi:true
+    }
   ],
   bootstrap: [AppComponent]
 })

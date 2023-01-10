@@ -1,0 +1,26 @@
+<p>reactive-form2 works!</p>
+
+
+<form [formGroup]="reactForm">
+    <div formArrayName="usernames" >
+        <div *ngFor="let control of formArr.controls; index as i" [formGroupName]="i">
+            <input type="text" formControlName="val1">
+            <input (blur)="editField(control)" type="text" formControlName="val2">
+            <input type="text" formControlName="val3">
+            <button (click)="deleteField(i)">Delete</button><br>
+        </div>
+            
+    </div>
+        
+    <button (click)="printValues()">Click</button><br>
+    <button (click)="addFields()">+1</button>
+</form>
+
+<div *ngFor="let obj of outputData;">
+    
+    <li>{{obj.id}}++{{obj.name}}</li>
+    <br><br>
+</div>
+
+
+{{outputData|json}}

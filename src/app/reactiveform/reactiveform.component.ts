@@ -58,7 +58,7 @@ export class ReactiveformComponent implements OnInit{
     
   }
 
-  public fun1(){
+  public fun1(){    
     console.log(this.addReactF.value)
     console.log(this.addReactF.value['ln'])
     console.log(this.addReactF.get('ln')?.value)

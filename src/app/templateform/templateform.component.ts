@@ -43,7 +43,6 @@ export class TemplateformComponent implements OnInit {
     'multi':["222"]
   }
   f.setValue(formObj)
-  f
  }
 
   constructor(){}

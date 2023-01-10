@@ -1,0 +1,10 @@
+<p>post-form works!</p>
+<div *ngIf="submitted">Data has been updated</div>
+<form #postForm="ngForm" (submit)="printValues(postForm)">
+    <input type="text" name="f" id="" [(ngModel)]="f"><br>
+    <input type="checkbox" name="cb" id="" [(ngModel)]="cb"><br>
+    <input type="submit" value="Submit"><br>
+    <button (click)="updateForm(postForm)">Post</button>
+    <button (click)="putForm()">Put</button>
+    <button (click)="deleteForm()">Delete</button>
+</form>

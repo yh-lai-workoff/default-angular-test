@@ -17,6 +17,9 @@ import { ResolveguardGuard } from './resolveguard.guard';
 import { TemplateformComponent } from './templateform/templateform.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ReactiveformComponent } from './reactiveform/reactiveform.component';
+import { ReactiveForm2Component } from './reactive-form2/reactive-form2.component';
+import { PostFormComponent } from './post-form/post-form.component';
+import { AppComponent } from './app.component';
 
 // Step 2
 const routes : Routes =[
@@ -30,8 +33,24 @@ const routes : Routes =[
       {
         path:"reactive",
         component: ReactiveformComponent
+      },
+      {
+        path:"reactive2",
+        component:ReactiveForm2Component
+      },
+      {
+        path:"postForm",
+        component:PostFormComponent
+      },
+      {
+        path:"postForm/:val2",
+        component:PostFormComponent
       }
     ]
+  },
+  {
+    path:"app",
+    component:AppComponent
   },
   {
     path:"newone",
@@ -76,11 +95,11 @@ const routes : Routes =[
     component: NewtwoComponent
   },
   // Redirect: pathMatch on empty address
-  {
-    path: "",
-    redirectTo: "newtwo",
-    pathMatch: "full"
-  },
+  // {
+  //   path: "",
+  //   redirectTo: "newtwo",
+  //   pathMatch: "full"
+  // },
   {
     path:"newfour",
     component: NewfourComponent
